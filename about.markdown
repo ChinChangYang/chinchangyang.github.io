@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Chin-Chang Yang is from [Taiwan](https://en.wikipedia.org/wiki/Taiwan).
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+He is a [computer science](https://en.wikipedia.org/wiki/Computer_science) [Ph.D](https://en.wikipedia.org/wiki/Doctor_of_Philosophy).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+His research is focused on solving [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) with [differential evolution](https://en.wikipedia.org/wiki/Differential_evolution).
 
+He is a [software](https://en.wikipedia.org/wiki/Software) [technical manager](https://en.wikipedia.org/wiki/Technical_director) in [Ambarella](http://ambarella.com) Inc.
 
-[jekyll-organization]: https://github.com/jekyll
+His work is [video processing](https://en.wikipedia.org/wiki/Video_processing) [microcode](https://en.wikipedia.org/wiki/Microcode) development.
