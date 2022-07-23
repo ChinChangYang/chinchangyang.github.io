@@ -28,7 +28,7 @@ github_username:  ChinChangYang
 show_excerpts: true
 
 # Build settings
-theme: minima
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
