@@ -10,7 +10,7 @@ Chin-Chang Yang is from [Taiwan](https://en.wikipedia.org/wiki/Taiwan).
 
 He is a [software](https://en.wikipedia.org/wiki/Software) [technical manager](https://en.wikipedia.org/wiki/Technical_director) in [Ambarella](http://ambarella.com) Inc.
 
-He has more than 7 years of relevant work experience in developing [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) [microcode](https://en.wikipedia.org/wiki/Microcode) to implement  [image processing pipeline](https://www.ambarella.com/technology/#image-quality) featuring [low power consumption](https://www.ambarella.com/technology/#low-power) and [functional safety](https://www.ambarella.com/technology/#functional-safety) for [Ambarella's processors](https://www.ambarella.com/products/automotive/).
+He has more than 7 years of relevant work experience in developing [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) [microcode](https://en.wikipedia.org/wiki/Microcode) to implement  [image processing pipeline](https://www.ambarella.com/technology/#image-quality) featuring [low power consumption](https://www.ambarella.com/technology/#low-power) for [Ambarella's processors](https://www.ambarella.com/products/automotive/).
 
 He has software development experience in [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)) and [Linux](https://en.wikipedia.org/wiki/Linux) environment.
 
