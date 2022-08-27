@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fix a Memory Leak of Metal Backend of Leela Chess Zero"
-date:   2022-08-20 22:56:00 +0800
+date:   2022-08-27 23:16:00 +0800
 categories: github lc0 metal
 ---
 I fixed a [memory leak](https://en.wikipedia.org/wiki/Memory_leak) of [Metal](https://developer.apple.com/metal/) [backend](https://en.wikipedia.org/wiki/Frontend_and_backend) of [Leela Chess Zero](https://github.com/LeelaChessZero/lc0) (lc0). Let's see how I did it.
