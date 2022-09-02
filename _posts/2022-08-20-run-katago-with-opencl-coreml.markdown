@@ -22,9 +22,9 @@ Note that it is very hard to generate a KataGo CoreML model on Apple M1 Pro beca
 
 So the only computer that can generate a KataGo CoreML model is MacBook Air for me.
 # Get KataGo CoreML backend source code
-KataGo CoreML backend is done in my [`coreml-backend`](https://github.com/ChinChangYang/KataGo/tree/coreml-backend) branch. We need to clone the source code. The command is shown as below.
+KataGo CoreML backend is done in my [`v1.11.0-coreml1`](https://github.com/ChinChangYang/KataGo/tree/v1.11.0-coreml1) tag. We need to clone the source code. The command is shown as below.
 ```
-git clone https://github.com/ChinChangYang/KataGo.git -b coreml-backend
+git clone https://github.com/ChinChangYang/KataGo.git -b v1.11.0-coreml1
 ```
 It will create a subdirectory `KataGo` in the current directory, and download the source code to `KataGo/`.
 # Generate an Xcode project from KataGo
