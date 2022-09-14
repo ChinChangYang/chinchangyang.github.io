@@ -24,5 +24,5 @@ His dissertation is "[A Novel Differential Evolution and Its Effective Applicati
 
 # Language
 - [Chinese](https://en.wikipedia.org/wiki/Chinese_language) - [First language](https://en.wikipedia.org/wiki/First_language)
-- [English](https://en.wikipedia.org/wiki/English_language) - [Voxy Proficiency Achievement Certificate - Intermediate](https://app.voxy.com/certificates/proficiency-test/62a948afdc1eb40726169878/)
+- [English](https://en.wikipedia.org/wiki/English_language) - [Voxy Proficiency Achievement Certificate - High Intermediate](https://app.voxy.com/certificates/proficiency-test/6321e5472ae91c0935649fbc/)
 - [Japanese](https://en.wikipedia.org/wiki/Japanese_language) - [Japanese Language Proficiency Test - N5](/assets/JLPT_CCY_N5.png)
