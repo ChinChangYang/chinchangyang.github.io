@@ -139,7 +139,7 @@ The CoreML example config file sets the following parameters that are different 
 
 It increases the number of server threads by 1, and configures [OpenCL](https://www.khronos.org/opencl/) devices to use thread 0 and thread 1.
 
-The KataGo that were built from the source code of my [`coreml-backend`](https://github.com/ChinChangYang/KataGo/tree/coreml-backend) branch simply replaces the first OpenCL device by the CoreML model, so KataGo will actually run CoreML and OpenCL backends in thread 0 and thread 1, respectively.
+The KataGo that were built from the source code of my [`v1.11.0-coreml1`](https://github.com/ChinChangYang/KataGo/tree/v1.11.0-coreml1) tag simply replaces the first OpenCL device by the CoreML model, so KataGo will actually run CoreML and OpenCL backends in thread 0 and thread 1, respectively.
 
 - CoreML backend -> Thread 0
 - OpenCL backend -> Thread 1
