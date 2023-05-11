@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Developing a Cyclomatic Complexity Analyzer for C in VS Code"
+date:   2023-05-11 23:16:00 +0800
+categories: github vs-code-extension cyclomatic-complexity c-parser clang
+---
 # Cyclomatic Complexity Analyzer for C in VS Code
 
 ## Introduction
