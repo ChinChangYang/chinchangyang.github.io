@@ -80,3 +80,6 @@ coremlbackend.cpp
     get_coremlbackend_policy_output();
 ...
 ```
+
+# Update (2023-06-07)
+- KataGo [v1.12.4-coreml1](https://github.com/ChinChangYang/KataGo/releases/tag/v1.12.4-coreml1) supports [model version 11](https://github.com/lightvector/KataGo/releases/tag/v1.12.0), which is trained on [PyTorch](https://pytorch.org). Notably, with Apple's support for PyTorch on the Apple M1 Pro, you can now convert a KataGo network of PyTorch to a Core ML model without needing an Intel-based Macbook.
