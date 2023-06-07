@@ -130,9 +130,9 @@ Xcode project has been configured correctly. Now we can build KataGo by clicking
 
 If build is successful, it will show "Build Succeeded"
 # Run KataGo with CoreML config
-The KataGo executable has been built to `Release/katago`. We need to specify a CoreML config file to run KataGo correctly. An example config file can be found in [`../cpp/configs/misc/coreml_example.cfg`](https://github.com/ChinChangYang/KataGo/blob/coreml-backend/cpp/configs/misc/coreml_example.cfg).
+The KataGo executable has been built to `Release/katago`. We need to specify a CoreML config file to run KataGo correctly. An example config file can be found in [`../cpp/configs/misc/coreml_example.cfg`](https://github.com/ChinChangYang/KataGo/blob/v1.11.0-coreml1/cpp/configs/misc/coreml_example.cfg).
 
-The CoreML example config file sets the following parameters that are different with the GTP example config file ([`gtp_example.cfg`](https://github.com/ChinChangYang/KataGo/blob/coreml-backend/cpp/configs/gtp_example.cfg)).
+The CoreML example config file sets the following parameters that are different with the GTP example config file ([`gtp_example.cfg`](https://github.com/ChinChangYang/KataGo/blob/v1.11.0-coreml1/cpp/configs/gtp_example.cfg)).
 - `numNNServerThreadsPerModel = 2`
 - `openclDeviceToUseThread0 = 0`
 - `openclDeviceToUseThread1 = 1`
@@ -215,3 +215,9 @@ If interested see also other notes about performance and mem usage in the top of
 # Known Issues
 - Only support 19x19 board size
 - Not support contributing self-play games because CoreML model cannot be updated from [KataGo Distributed Training](https://katagotraining.org) server.
+
+# Update (2023-06-07)
+- KataGo [v1.11.0-coreml2](https://github.com/ChinChangYang/KataGo/releases/tag/v1.11.0-coreml2) supports arbitrary board size.
+- KataGo [v1.11.0-coreml3](https://github.com/ChinChangYang/KataGo/releases/tag/v1.11.0-coreml3) runs GPU with [Metal Performance Shaders Graph](https://developer.apple.com/documentation/metalperformanceshadersgraph), instead of OpenCL.
+- KataGo [v1.12.4-coreml1](https://github.com/ChinChangYang/KataGo/releases/tag/v1.12.4-coreml1) supports [model version 11](https://github.com/lightvector/KataGo/releases/tag/v1.12.0), which is trained on [PyTorch](https://pytorch.org). Notably, with Apple's support for PyTorch on the Apple M1 Pro, you can now convert a KataGo network of PyTorch to a Core ML model without needing an Intel-based Macbook.
+- KataGo [v1.13.2-coreml1](https://github.com/ChinChangYang/KataGo/releases/tag/v1.13.2-coreml1) supports [model version 14](https://github.com/lightvector/KataGo/releases/tag/v1.13.0).
