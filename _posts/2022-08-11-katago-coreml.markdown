@@ -4,6 +4,9 @@ title:  "Run Katago with Core ML in Apple silicon"
 date:   2022-08-11 00:09:00 +0800
 categories: github katago coreml apple m1 arm64
 ---
+
+This post introduces how to convert a KataGo network to a Core ML model.
+
 # Convert a Katago network to a Core ML model
 Borrow an Intel-based Macbook, and install Tensorflow 1.5. Then, follow this [gist](https://gist.github.com/ChinChangYang/5e9d7ff5900f7be8af0f226689e84e7a) to convert a Katago network.
 # Generate an Xcode project from KataGo
@@ -83,3 +86,4 @@ coremlbackend.cpp
 
 # Update (2023-06-07)
 - KataGo [v1.12.4-coreml1](https://github.com/ChinChangYang/KataGo/releases/tag/v1.12.4-coreml1) supports [model version 11](https://github.com/lightvector/KataGo/releases/tag/v1.12.0), which is trained on [PyTorch](https://pytorch.org). Notably, with Apple's support for PyTorch on the Apple M1 Pro, you can now convert a KataGo network of PyTorch to a Core ML model without needing an Intel-based Macbook.
+- For more information about KataGo Core ML model, please see this [release page](https://github.com/ChinChangYang/KataGo/releases).
