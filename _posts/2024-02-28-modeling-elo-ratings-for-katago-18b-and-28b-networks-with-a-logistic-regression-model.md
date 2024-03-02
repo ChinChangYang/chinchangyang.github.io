@@ -107,7 +107,7 @@ The experimental phase yielded an extensive dataset, capturing the evolving rela
 
 An illustrative graph showcases the variation in the model's coefficients and bias throughout the experiment.
 
-![Dynamics of Coefficients and Bias in Logistic Regression](../assets/b18-b28-coef-dynamic.png)
+![Dynamics of Coefficients and Bias in Logistic Regression](/assets/b18-b28-coef-dynamic.png)
 
 On this graph:
 
@@ -125,7 +125,7 @@ The final bias and coefficients are listed below:
 
 Another set of visuals provides a scatter plot alongside a contour plot, enriching my interpretation of the Elo rating model's predictions.
 
-![Scatter and Contour Plots of Elo Rating Model](../assets/b18-b28-visit-bound.png)
+![Scatter and Contour Plots of Elo Rating Model](/assets/b18-b28-visit-bound.png)
 
 The scatter plot:
 
