@@ -35,7 +35,7 @@ $$ f(x,y) = {1 \over {1 + \exp({-b-w_1 \ln(x) - w_2 \ln(y)})}} $$
 
 In this equation:
 
-- $$f(x,y)$$ indicates the probability of the 28b network winning against the 18b network, with $x$ and $$y$$ being their respective maximum visit counts.
+- $$f(x,y)$$ indicates the probability of the 28b network winning against the 18b network, with $$x$$ and $$y$$ being their respective maximum visit counts.
 - $$b$$ is the model's baseline [bias](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1605-L1606), setting the initial win probability.
 - $$w_1$$ and $$w_2$$ are [coefficients](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1599-L1600) that measure the effect of each network's configuration on the game outcome.
 - The logarithmic terms, $$\ln(x)$$ and $$\ln(y)$$, adjust the impact of [maximum visits](https://github.com/lightvector/KataGo/blob/c6de1bbda837a0717eaeca46102f7326ed0da0d4/cpp/configs/gtp_example.cfg#L297) in a proportional manner.
