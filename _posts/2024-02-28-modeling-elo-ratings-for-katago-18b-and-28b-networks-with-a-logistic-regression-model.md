@@ -61,7 +61,7 @@ To enhance the accuracy of my logistic regression model in predicting the Elo ra
 2. **Candidate Generation:** For each iteration, generate a set of 50 new candidate combinations of max visits for the 18b and 28b networks.
 3. **Expected Improvement Calculation:** Evaluate each candidate by calculating its Expected Improvement (EI) over the current model predictions. The EI metric captures the potential value of each candidate in enhancing the model's performance, factoring in the degree of uncertainty in the prediction.
 
-$$ \text{EI}(x,y) = |f(x,y) - 0.5| + T $$
+$$ \text{EI}(x,y) = -|f(x,y) - 50\%| + T $$
 
 Here, $$T$$ represents a temperature parameter that introduces a controlled level of randomness into the selection process, encouraging exploration of less certain outcomes.
 
