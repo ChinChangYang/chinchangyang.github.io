@@ -20,8 +20,8 @@ In the context of KataGo networks, [Elo ratings](https://en.m.wikipedia.org/wiki
 
 $$ \text{Elo} = -400 * \log_{10}(-1 + (N / M)) $$
 
-Here, $N$ represents the total number of games played, and 
-$M$ stands for the victories achieved. This mathematical approach transforms the win/loss record into a singular value, making it easier to gauge a network's prowess at a glance.
+Here, $$N$$ represents the total number of games played, and 
+$$M$$ stands for the victories achieved. This mathematical approach transforms the win/loss record into a singular value, making it easier to gauge a network's prowess at a glance.
 
 ### Purpose of Modeling Elo Ratings
 Modeling Elo ratings for the KataGo networks, particularly the 18b and 28b versions, serves a critical function in evaluating their performance across diverse gameplay conditions. Direct calculations of Elo ratings using traditional methods are resource-intensive, especially when examining a broad spectrum of [playouts](https://github.com/lightvector/KataGo/blob/1af99e6a765cc1d86afee3246e76f7f7356c3910/docs/GraphSearch.md) options.
@@ -31,14 +31,14 @@ The foundation of this study is the application of logistic regression to predic
 
 Within my Elo rating model, the logistic regression equation is expressed as:
 
-$$ f(x,y) = {1 \over {1 + \exp({-b-w_1 \ln(x) - w_2 \ln(y)})}}$$
+$$ f(x,y) = {1 \over {1 + \exp({-b-w_1 \ln(x) - w_2 \ln(y)})}} $$
 
 In this equation:
 
-- $f(x,y)$ indicates the probability of the 28b network winning against the 18b network, with $x$ and $y$ being their respective maximum visit counts.
-- $b$ is the model's baseline [bias](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1605-L1606), setting the initial win probability.
-- $w_1$ and $w_2$ are [coefficients](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1599-L1600) that measure the effect of each network's configuration on the game outcome.
-- The logarithmic terms, $\ln(x)$ and $\ln(y)$, adjust the impact of [maximum visits](https://github.com/lightvector/KataGo/blob/c6de1bbda837a0717eaeca46102f7326ed0da0d4/cpp/configs/gtp_example.cfg#L297) in a proportional manner.
+- $$f(x,y)$$ indicates the probability of the 28b network winning against the 18b network, with $x$ and $$y$$ being their respective maximum visit counts.
+- $$b$$ is the model's baseline [bias](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1605-L1606), setting the initial win probability.
+- $$w_1$$ and $$w_2$$ are [coefficients](https://github.com/scikit-learn/scikit-learn/blob/5c4aa5d0d90ba66247d675d4c3fc2fdfba3c39ff/sklearn/linear_model/_logistic.py#L1599-L1600) that measure the effect of each network's configuration on the game outcome.
+- The logarithmic terms, $$\ln(x)$$ and $$\ln(y)$$, adjust the impact of [maximum visits](https://github.com/lightvector/KataGo/blob/c6de1bbda837a0717eaeca46102f7326ed0da0d4/cpp/configs/gtp_example.cfg#L297) in a proportional manner.
 
 This logistic regression model allows me to transform the dynamics of Go gameplay into quantifiable probabilities. By tuning this model with data from actual games, I gain insights into the effects of network settings on the balance of competition, providing a detailed view of each network's performance in various scenarios.
 
@@ -51,7 +51,7 @@ Transforming this with the logistic regression result, the Elo rating equation b
 
 $$ \text{Elo} = {400(b+w_1 \ln(x) + w_2 \ln(y)) \over {\ln(10)}} $$
 
-This approach uses the logistic regression output—$f(x,y)$—to compute Elo ratings, reflecting the effects of network configurations on competitive outcomes.
+This approach uses the logistic regression output—$$f(x,y)$$—to compute Elo ratings, reflecting the effects of network configurations on competitive outcomes.
 
 ### Refining the Model: Active Learning Approach
 To enhance the accuracy of my logistic regression model in predicting the Elo ratings for the 18b and 28b KataGo networks, I employ an active learning strategy. This approach systematically refines the model by iteratively incorporating new data points that are expected to provide the most valuable information.
@@ -60,10 +60,12 @@ To enhance the accuracy of my logistic regression model in predicting the Elo ra
 1. **Initial Sampling:** Begin with a random selection of max visit combinations within a predefined range for the initial set of games, establishing a baseline model.
 2. **Candidate Generation:** For each iteration, generate a set of 50 new candidate combinations of max visits for the 18b and 28b networks.
 3. **Expected Improvement Calculation:** Evaluate each candidate by calculating its Expected Improvement (EI) over the current model predictions. The EI metric captures the potential value of each candidate in enhancing the model's performance, factoring in the degree of uncertainty in the prediction.
-$$\text{EI}(x,y) = |f(x,y) - 0.5| + T$$
-Here, $T$ represents a temperature parameter that introduces a controlled level of randomness into the selection process, encouraging exploration of less certain outcomes.
 
-4. **Selection of Top-K Candidates:** From the pool of candidates, select the top $K$ combinations with the highest EI scores. These selections are expected to yield the most significant insights when added to the training data.
+$$ \text{EI}(x,y) = |f(x,y) - 0.5| + T $$
+
+Here, $$T$$ represents a temperature parameter that introduces a controlled level of randomness into the selection process, encouraging exploration of less certain outcomes.
+
+4. **Selection of Top-K Candidates:** From the pool of candidates, select the top $$K$$ combinations with the highest EI scores. These selections are expected to yield the most significant insights when added to the training data.
 5. **Model Update:** Play games using the selected max visit combinations, observe the outcomes, and update the logistic regression model with these new data points. This step incrementally improves the model's predictive accuracy and reliability.
 
 By continuously cycling through this active learning loop, I systematically enhance the model's understanding of the relationship between max visit settings and game outcomes. This iterative process ensures that my model remains adaptive and increasingly reflective of the true dynamics between the 18b and 28b networks, leading to more precise and actionable Elo rating estimations.
@@ -72,16 +74,17 @@ By continuously cycling through this active learning loop, I systematically enha
 The concept of temperature in my active learning loop plays a crucial role in balancing exploration with exploitation. By adjusting the temperature parameter, I modulate the degree of randomness in selecting new data points for model refinement, ensuring a dynamic and adaptive learning process.
 
 **Temperature Dynamics:**
-The temperature term, $T$, is strategically decreased over time, following a linear decay. This approach is designed to encourage a higher degree of exploration in the early stages of model training, where the broader search for informative data points is beneficial. As the model becomes more refined, the focus shifts towards exploitation, honing in on areas of the parameter space that are most likely to enhance model accuracy around $\text{Elo} = 0$.
+The temperature term, $$T$$, is strategically decreased over time, following a linear decay. This approach is designed to encourage a higher degree of exploration in the early stages of model training, where the broader search for informative data points is beneficial. As the model becomes more refined, the focus shifts towards exploitation, honing in on areas of the parameter space that are most likely to enhance model accuracy around $$\text{Elo} = 0$$.
 
 The temperature is adjusted according to the formula:
+
 $$ T = k \cdot {(N_\text{iter} - i) \over N_\text{iter}} \cdot \text{rand}[0,1] $$
 
 In this formula:
-- $k$ is a scaling factor that determines the overall level of randomness introduced by the temperature.
-- $N_{\text{iter}}$ represents the total number of iterations planned for the active learning loop, setting the timeframe over which the temperature will decay.
-- $i$ denotes the current iteration, allowing the temperature to decrease linearly as the model progresses through successive rounds of refinement.
-- $\text{rand}[0,1]$ introduces a random element to the temperature adjustment.
+- $$k$$ is a scaling factor that determines the overall level of randomness introduced by the temperature.
+- $$N_{\text{iter}}$$ represents the total number of iterations planned for the active learning loop, setting the timeframe over which the temperature will decay.
+- $$i$$ denotes the current iteration, allowing the temperature to decrease linearly as the model progresses through successive rounds of refinement.
+- $$\text{rand}[0,1]$$ introduces a random element to the temperature adjustment.
 
 This temperature-controlled mechanism ensures that my learning process remains agile, continuously adapting to the evolving landscape of the model's performance. By fine-tuning the balance between exploring new possibilities and exploiting known information, I can achieve a more robust and accurate Elo rating prediction model for the KataGo networks.
 
@@ -89,9 +92,9 @@ This temperature-controlled mechanism ensures that my learning process remains a
 The experiment was set up using KataGo v1.14.0 with an OpenCL backend, executed on a MacBook M3 Pro Max. The objective was to assess the Elo rating predictions of the 18b and 28b networks through a series of controlled simulations.
 
 **Detailed Experimental Parameters:**
-- **Top-K Selection:** I employed a selection strategy focusing on the top 8 points ($K=8$) for analysis, ensuring a targeted approach to data gathering.
-- **Temperature Adjustment:** The experiment incorporated a temperature control parameter ($k=2$), crucial for managing the exploration-exploitation balance during the learning process.
-- **Iterative Process:** The methodology involved 120 iterations ($N_\text{iter}=120$), each contributing to the incremental refinement of the model.
+- **Top-K Selection:** I employed a selection strategy focusing on the top 8 points ($$K=8$$) for analysis, ensuring a targeted approach to data gathering.
+- **Temperature Adjustment:** The experiment incorporated a temperature control parameter ($$k=2$$), crucial for managing the exploration-exploitation balance during the learning process.
+- **Iterative Process:** The methodology involved 120 iterations ($$N_\text{iter}=120$$), each contributing to the incremental refinement of the model.
 
 For an in-depth understanding, refer to the [detailed source code](https://github.com/ChinChangYang/KataGoTuner/blob/dc66b199a6204efbf2371cd7397281fe7ff27ead/visitsBoundary.py).
 
@@ -118,8 +121,8 @@ On this graph:
 **Quantitative Insights:**
 
 The final bias and coefficients are listed below:
-- **Coefficients:** $(w_1, w_2) = (-1.49987981, 1.55287902)$.
-- **Bias:** $b = 0.34352172$.
+- **Coefficients:** $$(w_1, w_2) = (-1.49987981, 1.55287902)$$.
+- **Bias:** $$b = 0.34352172$$.
 
 **Interpretative Scatter and Contour Plots:**
 
